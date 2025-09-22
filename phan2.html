@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Phần 2: Quy Luật Lượng - Chất</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.highlight-box {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 10px;
+				margin: 2rem 0;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			
+			.concept-box {
+				background: #f8f9fa;
+				border-left: 5px solid #007bff;
+				padding: 1.5rem;
+				margin: 1.5rem 0;
+				border-radius: 0 10px 10px 0;
+			}
+			
+			.definition-box {
+				background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 10px;
+				margin: 2rem 0;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			
+			.concepts-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+			
+			.concept-card {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				border-top: 4px solid #28a745;
+				transition: transform 0.3s ease;
+			}
+			
+			.concept-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.concept-card h4 {
+				color: #28a745;
+				margin-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.example-box {
+				background: #fff3cd;
+				border: 1px solid #ffeaa7;
+				border-radius: 8px;
+				padding: 1rem;
+				margin: 1rem 0;
+			}
+			
+			.example-box h5 {
+				color: #856404;
+				margin-bottom: 0.5rem;
+			}
+			
+			.process-flow {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				margin: 2rem 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+				border-radius: 15px;
+				color: white;
+			}
+			
+			.process-step {
+				background: rgba(255,255,255,0.2);
+				padding: 1rem;
+				border-radius: 10px;
+				margin: 0.5rem;
+				flex: 1;
+				min-width: 150px;
+				text-align: center;
+				backdrop-filter: blur(10px);
+			}
+			
+			.process-step h4 {
+				margin-bottom: 0.5rem;
+				font-size: 1.1rem;
+			}
+			
+			.arrow {
+				font-size: 1.5rem;
+				margin: 0 1rem;
+			}
+			
+			.historical-example {
+				background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.historical-example h3 {
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
+			
+			.historical-steps {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+			
+			.historical-step {
+				background: rgba(255,255,255,0.2);
+				padding: 1rem;
+				border-radius: 8px;
+				backdrop-filter: blur(10px);
+			}
+			
+			.historical-step h4 {
+				margin-bottom: 0.5rem;
+				font-size: 1rem;
+			}
+			
+			.practical-meaning {
+				background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.practical-points {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+			
+			.practical-card {
+				background: rgba(255,255,255,0.2);
+				padding: 1.5rem;
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+			}
+			
+			.practical-card h4 {
+				margin-bottom: 1rem;
+				color: #fff;
+			}
+			
+			.back-button {
+				display: inline-block;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 1rem 2rem;
+				text-decoration: none;
+				border-radius: 25px;
+				margin: 2rem 0;
+				transition: transform 0.3s ease;
+			}
+			
+			.back-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			}
+			
+			@media (max-width: 768px) {
+				.process-flow {
+					flex-direction: column;
+				}
+				
+				.arrow {
+					transform: rotate(90deg);
+					margin: 0.5rem 0;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">← Quay lại trang chủ</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Phần 2</span>
+									<h1>Quy Luật Lượng - Chất</h1>
+									<p>Khám phá quy luật về sự chuyển hóa từ thay đổi về lượng thành thay đổi về chất và ngược lại</p>
+								</header>
+
+								<!-- Định nghĩa -->
+								<div class="definition-box">
+									<h2><i class="fas fa-balance-scale"></i> Định nghĩa</h2>
+									<p>Quy luật về sự chuyển hóa từ thay đổi về lượng (số lượng, quy mô) thành thay đổi về chất (bản chất, thuộc tính) và ngược lại.</p>
+								</div>
+
+								<!-- Khái niệm chính -->
+								<h2><i class="fas fa-lightbulb"></i> Khái niệm chính</h2>
+								
+								<div class="concepts-grid">
+									<div class="concept-card">
+										<h4><i class="fas fa-atom"></i> Chất</h4>
+										<p>Thuộc tính vốn có, làm sự vật là chính nó, phân biệt sự vật này với sự vật khác.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Nước:</strong> Chất lỏng, không màu, không mùi, hòa tan nhiều chất, có nhiệt độ sôi 100°C.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-chart-line"></i> Lượng</h4>
+										<p>Số lượng, quy mô, trình độ, mức độ phát triển của sự vật, hiện tượng.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Nước:</strong> Nhiệt độ (0°C, 50°C, 100°C), thể tích (1 lít, 2 lít), áp suất.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-ruler"></i> Độ</h4>
+										<p>Giới hạn lượng thay đổi mà chất chưa đổi, khoảng ổn định của chất.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Nước:</strong> Từ 0°C đến 99°C vẫn là chất lỏng, chưa chuyển thành hơi.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-bullseye"></i> Điểm nút</h4>
+										<p>Thời điểm lượng đủ để đổi chất, ranh giới giữa hai chất khác nhau.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Nước:</strong> 100°C - điểm nút chuyển từ lỏng sang hơi.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-rocket"></i> Bước nhảy</h4>
+										<p>Sự chuyển hóa chất, quá trình thay đổi từ chất này sang chất khác.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Nước:</strong> Chuyển từ trạng thái lỏng sang trạng thái hơi.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Quan hệ biện chứng -->
+								<div class="concept-box">
+									<h2><i class="fas fa-sync-alt"></i> Quan hệ biện chứng</h2>
+									<p>Lượng tích lũy trong độ → Đạt điểm nút → Dẫn đến bước nhảy → Tạo chất mới → Rồi lượng mới tiếp tục tích lũy trong độ mới.</p>
+									
+									<div class="process-flow">
+										<div class="process-step">
+											<h4>1. Tích lũy Lượng</h4>
+											<p>Lượng thay đổi trong giới hạn của độ</p>
+										</div>
+										<div class="arrow">→</div>
+										<div class="process-step">
+											<h4>2. Đạt Điểm nút</h4>
+											<p>Lượng đủ để chuyển hóa chất</p>
+										</div>
+										<div class="arrow">→</div>
+										<div class="process-step">
+											<h4>3. Bước nhảy</h4>
+											<p>Chuyển hóa từ chất cũ sang chất mới</p>
+										</div>
+										<div class="arrow">→</div>
+										<div class="process-step">
+											<h4>4. Chất mới</h4>
+											<p>Xuất hiện với lượng và độ mới</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Ví dụ lịch sử -->
+								<div class="historical-example">
+									<h3><i class="fas fa-industry"></i> Ví dụ lịch sử: Cách mạng Công nghiệp lần thứ nhất ở Anh (1760-1840)</h3>
+									
+									<div class="historical-steps">
+										<div class="historical-step">
+											<h4><i class="fas fa-chart-bar"></i> Lượng</h4>
+											<p><strong>Tích lũy máy móc:</strong> Spinning Jenny (1764), máy dệt (1769)</p>
+											<p><strong>Dân số đô thị:</strong> 10% năm 1700 → 50% năm 1850</p>
+											<p><strong>Vốn từ thương mại:</strong> Tích lũy từ buôn bán thuộc địa</p>
+										</div>
+
+										<div class="historical-step">
+											<h4><i class="fas fa-balance-scale"></i> Độ</h4>
+											<p>Kinh tế phong kiến thủ công vẫn tồn tại và chiếm ưu thế. Các xưởng thủ công nhỏ lẻ vẫn là hình thức sản xuất chính.</p>
+										</div>
+
+										<div class="historical-step">
+											<h4><i class="fas fa-bullseye"></i> Điểm nút</h4>
+											<p><strong>Máy hơi nước</strong> của James Watt (1769) được cải tiến và lan tỏa rộng rãi. Đây là bước đột phá quan trọng nhất.</p>
+										</div>
+
+										<div class="historical-step">
+											<h4><i class="fas fa-rocket"></i> Bước nhảy</h4>
+											<p>Chuyển từ sản xuất thủ công sang công nghiệp cơ khí hóa, sinh ra <strong>chủ nghĩa tư bản công nghiệp</strong>.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Ý nghĩa thực tiễn -->
+								<div class="practical-meaning">
+									<h2><i class="fas fa-trophy"></i> Ý nghĩa thực tiễn</h2>
+									
+									<div class="practical-points">
+										<div class="practical-card">
+											<h4><i class="fas fa-plus-circle"></i> Tích lũy tích cực</h4>
+											<p>Cần tích lũy lượng tích cực như đầu tư công nghệ, giáo dục, nghiên cứu để tạo bước nhảy tiến bộ trong kinh tế hiện đại hóa.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-exclamation-triangle"></i> Tránh nóng vội</h4>
+											<p>Không nên nóng vội thực hiện cách mạng thiếu chuẩn bị. Cần có đủ lượng tích lũy trước khi thực hiện bước nhảy.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-shield-alt"></i> Tránh bảo thủ</h4>
+											<p>Không nên bảo thủ, giữ mãi sản xuất lạc hậu. Cần chủ động tích lũy để tạo điều kiện cho bước nhảy tiến bộ.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Navigation -->
+								<div style="text-align: center; margin: 3rem 0;">
+									<a href="index.html" class="back-button">
+										<i class="fas fa-arrow-left"></i> Quay lại trang chủ
+									</a>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Triết học Mác - Lênin</h3>
+							<p>Nghiên cứu quy luật Lượng - Chất để hiểu rõ hơn về quá trình phát triển và biến đổi của sự vật, hiện tượng trong thực tế.</p>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Ứng dụng</h3>
+								<p>Tích lũy lượng tích cực<br />
+								Tạo bước nhảy tiến bộ</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Triết học Mác - Lênin</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

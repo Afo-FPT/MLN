@@ -1,0 +1,450 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Phần 4: Quy Luật Phủ Định Của Phủ Định</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.highlight-box {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 10px;
+				margin: 2rem 0;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			
+			.concept-box {
+				background: #f8f9fa;
+				border-left: 5px solid #17a2b8;
+				padding: 1.5rem;
+				margin: 1.5rem 0;
+				border-radius: 0 10px 10px 0;
+			}
+			
+			.definition-box {
+				background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 10px;
+				margin: 2rem 0;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			
+			.concepts-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+			
+			.concept-card {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				border-top: 4px solid #17a2b8;
+				transition: transform 0.3s ease;
+			}
+			
+			.concept-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.concept-card h4 {
+				color: #17a2b8;
+				margin-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.example-box {
+				background: #d1ecf1;
+				border: 1px solid #bee5eb;
+				border-radius: 8px;
+				padding: 1rem;
+				margin: 1rem 0;
+			}
+			
+			.example-box h5 {
+				color: #0c5460;
+				margin-bottom: 0.5rem;
+			}
+			
+			.spiral-flow {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin: 2rem 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+				border-radius: 15px;
+				color: white;
+				position: relative;
+			}
+			
+			.spiral-step {
+				background: rgba(255,255,255,0.2);
+				padding: 1.5rem;
+				border-radius: 10px;
+				margin: 0.5rem;
+				width: 80%;
+				text-align: center;
+				backdrop-filter: blur(10px);
+				position: relative;
+			}
+			
+			.spiral-step h4 {
+				margin-bottom: 0.5rem;
+				font-size: 1.2rem;
+			}
+			
+			.spiral-step p {
+				margin-bottom: 0.5rem;
+			}
+			
+			.spiral-step.year {
+				background: rgba(255,255,255,0.3);
+				padding: 0.5rem 1rem;
+				border-radius: 20px;
+				font-weight: bold;
+				display: inline-block;
+				margin-top: 0.5rem;
+			}
+			
+			.arrow-down {
+				font-size: 2rem;
+				margin: 1rem 0;
+				color: rgba(255,255,255,0.8);
+			}
+			
+			.historical-example {
+				background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.historical-example h3 {
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
+			
+			.historical-steps {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+			
+			.historical-step {
+				background: rgba(255,255,255,0.2);
+				padding: 1.5rem;
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+				position: relative;
+			}
+			
+			.historical-step h4 {
+				margin-bottom: 1rem;
+				font-size: 1.1rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.historical-step .timeline {
+				background: rgba(255,255,255,0.3);
+				padding: 0.3rem 0.8rem;
+				border-radius: 15px;
+				font-size: 0.9rem;
+				font-weight: bold;
+				display: inline-block;
+				margin-bottom: 0.5rem;
+			}
+			
+			.historical-step.thesis {
+				border-left: 5px solid #28a745;
+			}
+			
+			.historical-step.negation {
+				border-left: 5px solid #dc3545;
+			}
+			
+			.historical-step.negation-of-negation {
+				border-left: 5px solid #ffc107;
+			}
+			
+			.practical-meaning {
+				background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.practical-points {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+			
+			.practical-card {
+				background: rgba(255,255,255,0.2);
+				padding: 1.5rem;
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+			}
+			
+			.practical-card h4 {
+				margin-bottom: 1rem;
+				color: #fff;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.back-button {
+				display: inline-block;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 1rem 2rem;
+				text-decoration: none;
+				border-radius: 25px;
+				margin: 2rem 0;
+				transition: transform 0.3s ease;
+			}
+			
+			.back-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			}
+			
+			.characteristics-list {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin: 1rem 0;
+			}
+			
+			.characteristic-item {
+				background: rgba(255,255,255,0.1);
+				padding: 1rem;
+				border-radius: 8px;
+				text-align: center;
+				backdrop-filter: blur(10px);
+			}
+			
+			.characteristic-item h5 {
+				margin-bottom: 0.5rem;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">← Quay lại trang chủ</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Phần 4</span>
+									<h1>Quy Luật Phủ Định Của Phủ Định</h1>
+									<p>Khám phá quy luật chỉ ra sự phát triển theo đường xoáy ốc, qua các lần phủ định biện chứng, tạo cái mới tiến bộ hơn</p>
+								</header>
+
+								<!-- Định nghĩa -->
+								<div class="definition-box">
+									<h2><i class="fas fa-sync-alt"></i> Định nghĩa</h2>
+									<p>Quy luật chỉ ra sự phát triển theo đường xoáy ốc, qua các lần phủ định biện chứng, tạo cái mới tiến bộ hơn, với tính kế thừa.</p>
+								</div>
+
+								<!-- Khái niệm chính -->
+								<h2><i class="fas fa-lightbulb"></i> Khái niệm chính</h2>
+								
+								<div class="concepts-grid">
+									<div class="concept-card">
+										<h4><i class="fas fa-ban"></i> Phủ định biện chứng</h4>
+										<p>Tự phủ định do đấu tranh nội tại, tạo cái mới, tiến bộ hơn. Không phải sự hủy diệt hoàn toàn mà là sự phát triển cao hơn.</p>
+										<div class="example-box">
+											<h5>Đặc điểm:</h5>
+											<ul>
+												<li>Tự phủ định do mâu thuẫn nội tại</li>
+												<li>Tạo cái mới tiến bộ hơn</li>
+												<li>Có tính kế thừa</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-cogs"></i> Đặc trưng</h4>
+										<p>Các đặc trưng cơ bản của phủ định biện chứng và quy luật phủ định của phủ định.</p>
+										<div class="example-box">
+											<h5>Đặc trưng:</h5>
+											<ul>
+												<li><strong>Khách quan:</strong> Không phụ thuộc ý muốn</li>
+												<li><strong>Phổ biến:</strong> Có trong mọi lĩnh vực</li>
+												<li><strong>Đa dạng:</strong> Nhiều hình thức khác nhau</li>
+												<li><strong>Chu kỳ:</strong> Lặp lại có quy luật</li>
+												<li><strong>Kế thừa:</strong> Giữ lại yếu tố tích cực</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-chart-line"></i> Phát triển xoáy ốc</h4>
+										<p>Không quay về ban đầu mà cao hơn, phức tạp hơn. Mỗi vòng xoáy mới đều ở mức độ phát triển cao hơn vòng trước.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Dân chủ:</strong> Từ dân chủ trực tiếp Athens → Dân chủ đại diện hiện đại (cao hơn và phức tạp hơn)</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Quy trình phát triển xoáy ốc -->
+								<div class="concept-box">
+									<h2><i class="fas fa-sync-alt"></i> Quy trình phát triển xoáy ốc</h2>
+									
+									<div class="spiral-flow">
+										<div class="spiral-step">
+											<h4><i class="fas fa-plus-circle"></i> Thesis (Khẳng định)</h4>
+											<p>Trạng thái ban đầu, cái cũ tồn tại</p>
+											<div class="year">Giai đoạn 1</div>
+										</div>
+										
+										<div class="arrow-down">↓</div>
+										
+										<div class="spiral-step">
+											<h4><i class="fas fa-minus-circle"></i> Antithesis (Phủ định)</h4>
+											<p>Cái cũ bị phủ định, xuất hiện cái mới</p>
+											<div class="year">Giai đoạn 2</div>
+										</div>
+										
+										<div class="arrow-down">↓</div>
+										
+										<div class="spiral-step">
+											<h4><i class="fas fa-sync"></i> Synthesis (Phủ định của phủ định)</h4>
+											<p>Cái mới tiến bộ hơn, kế thừa yếu tố tích cực</p>
+											<div class="year">Giai đoạn 3</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Ví dụ lịch sử -->
+								<div class="historical-example">
+									<h3><i class="fas fa-landmark"></i> Ví dụ lịch sử: Sự phát triển nhà nước từ Hy Lạp cổ đại</h3>
+									
+									<div class="historical-steps">
+										<div class="historical-step thesis">
+											<h4><i class="fas fa-plus-circle"></i> Thesis (Khẳng định)</h4>
+											<div class="timeline">Thế kỷ 5 TCN</div>
+											<p><strong>Thành bang dân chủ Athens</strong></p>
+											<p>Công dân tham gia trực tiếp vào việc quản lý nhà nước. Hội đồng 500 người, Đại hội công dân quyết định các vấn đề quan trọng.</p>
+										</div>
+
+										<div class="historical-step negation">
+											<h4><i class="fas fa-minus-circle"></i> Phủ định đầu</h4>
+											<div class="timeline">509 TCN - 476 SCN</div>
+											<p><strong>Đế chế La Mã chuyên chế</strong></p>
+											<p>Quyền lực tập trung vào hoàng đế, chấm dứt nền dân chủ trực tiếp. Chế độ quân chủ tuyệt đối với quyền lực vô hạn.</p>
+										</div>
+
+										<div class="historical-step negation-of-negation">
+											<h4><i class="fas fa-sync"></i> Phủ định của phủ định</h4>
+											<div class="timeline">1215 - Hiện tại</div>
+											<p><strong>Dân chủ đại diện hiện đại</strong></p>
+											<p>Phong kiến châu Âu kế thừa luật pháp La Mã (Magna Carta 1215), dẫn đến dân chủ đại diện hiện đại qua Cách mạng Pháp 1789, Mỹ 1776. Có quyền bầu cử rộng rãi, hiến pháp, phân quyền.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Ý nghĩa thực tiễn -->
+								<div class="practical-meaning">
+									<h2><i class="fas fa-trophy"></i> Ý nghĩa thực tiễn</h2>
+									
+									<div class="practical-points">
+										<div class="practical-card">
+											<h4><i class="fas fa-eye"></i> Nhận thức phát triển</h4>
+											<p>Phát triển có tính quanh co nhưng vẫn tiến bộ. Dân chủ hiện đại cao hơn và hoàn thiện hơn so với dân chủ Athens cổ đại, mặc dù có những bước lùi tạm thời.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-handshake"></i> Ủng hộ cái mới</h4>
+											<p>Khuyến khích ủng hộ cái mới tiến bộ như dân chủ đại diện, đồng thời chống phủ định sạch trơn (coi thường di sản La Mã) hoặc bảo thủ (giữ mãi phong kiến).</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-vote-yea"></i> Thúc đẩy cải cách</h4>
+											<p>Trong thực tiễn, thúc đẩy cải cách chính trị tiến bộ, như mở rộng quyền bầu cử ở các nước hiện nay, cải thiện hệ thống đại diện, tăng cường tính minh bạch.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-balance-scale"></i> Cân bằng kế thừa và đổi mới</h4>
+											<p>Biết cách kế thừa những yếu tố tích cực của cái cũ trong khi đổi mới, không vứt bỏ hoàn toàn cũng không bảo thủ cực đoan.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Navigation -->
+								<div style="text-align: center; margin: 3rem 0;">
+									<a href="index.html" class="back-button">
+										<i class="fas fa-arrow-left"></i> Quay lại trang chủ
+									</a>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Triết học Mác - Lênin</h3>
+							<p>Nghiên cứu quy luật Phủ định của Phủ định để hiểu rõ hơn về quy luật phát triển theo đường xoáy ốc trong tự nhiên, xã hội và tư duy.</p>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Ứng dụng</h3>
+								<p>Nhận thức phát triển quanh co<br />
+								Thúc đẩy cải cách tiến bộ</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Triết học Mác - Lênin</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

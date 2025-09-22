@@ -1,0 +1,592 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dashboard Phân Công - Nhóm 2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.dashboard-container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin: 2rem 0;
+			}
+			
+			.member-card {
+				background: white;
+				border-radius: 15px;
+				padding: 2rem;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+				border-top: 5px solid #667eea;
+				transition: transform 0.3s ease;
+			}
+			
+			.member-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.member-card.quan {
+				border-top-color: #e74c3c;
+			}
+			
+			.member-card.minh {
+				border-top-color: #3498db;
+			}
+			
+			.member-card.quoc-anh {
+				border-top-color: #2ecc71;
+			}
+			
+			.member-card.vinh {
+				border-top-color: #f39c12;
+			}
+			
+			.member-header {
+				text-align: center;
+				margin-bottom: 1.5rem;
+			}
+			
+			.member-avatar {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 1rem;
+				color: white;
+				font-size: 2rem;
+				font-weight: bold;
+			}
+			
+			.member-avatar.quan {
+				background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+			}
+			
+			.member-avatar.minh {
+				background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+			}
+			
+			.member-avatar.quoc-anh {
+				background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+			}
+			
+			.member-avatar.vinh {
+				background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+			}
+			
+			.member-name {
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin-bottom: 0.5rem;
+				color: #2c3e50;
+			}
+			
+			.member-role {
+				color: #7f8c8d;
+				font-style: italic;
+			}
+			
+			.task-section {
+				margin: 1.5rem 0;
+			}
+			
+			.task-title {
+				font-size: 1.1rem;
+				font-weight: bold;
+				margin-bottom: 1rem;
+				color: #2c3e50;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.task-list {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.task-item {
+				background: #f8f9fa;
+				padding: 0.8rem;
+				margin: 0.5rem 0;
+				border-radius: 8px;
+				border-left: 4px solid #667eea;
+				transition: background 0.3s ease;
+			}
+			
+			.task-item:hover {
+				background: #e9ecef;
+			}
+			
+			.task-item.quan {
+				border-left-color: #e74c3c;
+			}
+			
+			.task-item.minh {
+				border-left-color: #3498db;
+			}
+			
+			.task-item.quoc-anh {
+				border-left-color: #2ecc71;
+			}
+			
+			.task-item.vinh {
+				border-left-color: #f39c12;
+			}
+			
+			.progress-bar {
+				background: #ecf0f1;
+				height: 8px;
+				border-radius: 4px;
+				overflow: hidden;
+				margin: 1rem 0;
+			}
+			
+			.progress-fill {
+				height: 100%;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				border-radius: 4px;
+				transition: width 0.3s ease;
+			}
+			
+			.progress-fill.quan {
+				background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+			}
+			
+			.progress-fill.minh {
+				background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+			}
+			
+			.progress-fill.quoc-anh {
+				background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+			}
+			
+			.progress-fill.vinh {
+				background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+			}
+			
+			.overview-section {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+				text-align: center;
+			}
+			
+			.overview-title {
+				font-size: 2rem;
+				margin-bottom: 1rem;
+			}
+			
+			.overview-stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+			
+			.stat-card {
+				background: rgba(255,255,255,0.2);
+				padding: 1.5rem;
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+			}
+			
+			.stat-number {
+				font-size: 2rem;
+				font-weight: bold;
+				margin-bottom: 0.5rem;
+			}
+			
+			.stat-label {
+				font-size: 0.9rem;
+				opacity: 0.9;
+			}
+			
+			.timeline-section {
+				background: #f8f9fa;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.timeline-title {
+				font-size: 1.5rem;
+				font-weight: bold;
+				margin-bottom: 2rem;
+				text-align: center;
+				color: #2c3e50;
+			}
+			
+			.timeline {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+			}
+			
+			.timeline-item {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				position: relative;
+			}
+			
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 4px;
+				height: 100%;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				border-radius: 2px;
+			}
+			
+			.timeline-phase {
+				font-weight: bold;
+				color: #667eea;
+				margin-bottom: 0.5rem;
+			}
+			
+			.timeline-description {
+				color: #7f8c8d;
+				font-size: 0.9rem;
+			}
+			
+			@media (max-width: 768px) {
+				.dashboard-container {
+					grid-template-columns: 1fr;
+				}
+				
+				.overview-stats {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">← Trang Chủ</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Những Điều Cần Biết</a></li>
+							<li><a href="generic.html">Reference</a></li>
+							<li class="active"><a href="elements.html">Phân Công</a></li>
+						</ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Dashboard</span>
+									<h1>Phân Công Công Việc<br />
+									Nhóm 2</h1>
+									<p>Dashboard quản lý và theo dõi tiến độ công việc của các thành viên trong dự án "Các Quy Luật Cơ Bản Của Phép Biện Chứng Duy Vật"</p>
+								</header>
+
+								<!-- Overview Section -->
+								<div class="overview-section">
+									<h2 class="overview-title">Tổng Quan Dự Án</h2>
+									<p>Dự án nghiên cứu và trình bày về ba quy luật cơ bản của phép biện chứng duy vật với sự tham gia đều của 4 thành viên</p>
+									
+									<div class="overview-stats">
+										<div class="stat-card">
+											<div class="stat-number">4</div>
+											<div class="stat-label">Thành Viên</div>
+										</div>
+										<div class="stat-card">
+											<div class="stat-number">3</div>
+											<div class="stat-label">Hoạt Động Chính</div>
+										</div>
+										<div class="stat-card">
+											<div class="stat-number">4</div>
+											<div class="stat-label">Quy Luật</div>
+										</div>
+										<div class="stat-card">
+											<div class="stat-number">100%</div>
+											<div class="stat-label">Hoàn Thành</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Dashboard Container -->
+								<div class="dashboard-container">
+									<!-- Quân -->
+									<div class="member-card quan">
+										<div class="member-header">
+											<div class="member-avatar quan">Q</div>
+											<div class="member-name">Hà Quân</div>
+											<div class="member-role">Member </div>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-search"></i> Tìm Hiểu Thông Tin
+											</div>
+											<ul class="task-list">
+												<li class="task-item quan">Nghiên cứu tài liệu về Quy luật Lượng - Chất</li>
+												<li class="task-item quan">Tìm kiếm ví dụ lịch sử Cách mạng Công nghiệp</li>
+												<li class="task-item quan">Phân tích ý nghĩa thực tiễn của quy luật</li>
+											</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-microphone"></i> Trình Bày
+											</div>
+											<ul class="task-list">
+												<li class="task-item quan">Thuyết trình về Quy luật Lượng - Chất</li>
+												<li class="task-item quan">Giải thích các khái niệm cơ bản</li>
+												<li class="task-item quan">Trả lời câu hỏi và thảo luận</li>
+											</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-code"></i> Làm Sản Phẩm
+											</div>
+											<ul class="task-list">
+												<li class="task-item quan">Thiết kế và phát triển trang web</li>
+												<li class="task-item quan">Tạo trang phan2.html với nội dung chi tiết</li>
+												<li class="task-item quan">Tối ưu hóa giao diện và trải nghiệm người dùng</li>
+											</ul>
+										</div>
+										
+										<div class="progress-bar">
+											<div class="progress-fill quan" style="width: 100%"></div>
+										</div>
+										<p style="text-align: center; margin-top: 0.5rem; font-weight: bold; color: #e74c3c;">Tiến độ: 100%</p>
+									</div>
+
+									<!-- Minh -->
+									<div class="member-card minh">
+										<div class="member-header">
+											<div class="member-avatar minh">M</div>
+											<div class="member-name">Phạm Ngọc Duy Minh</div>
+											<div class="member-role">Member</div>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-search"></i> Tìm Hiểu Thông Tin
+											</div>
+											<ul class="task-list">
+												<li class="task-item minh">Nghiên cứu về Quy luật Mâu thuẫn</li>
+												<li class="task-item minh">Tìm hiểu ví dụ Cách mạng Pháp 1789</li>
+												<li class="task-item minh">Phân tích các loại mâu thuẫn</li>
+											</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-microphone"></i> Trình Bày
+									</div>
+											<ul class="task-list">
+												<li class="task-item minh">Thuyết trình về Quy luật Mâu thuẫn</li>
+												<li class="task-item minh">Giải thích quan hệ biện chứng</li>
+												<li class="task-item minh">Dẫn dắt thảo luận nhóm</li>
+											</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-code"></i> Làm Sản Phẩm
+											</div>
+											<ul class="task-list">
+												<li class="task-item minh">Tạo trang phan3.html với thiết kế đẹp</li>
+												<li class="task-item minh">Chuẩn bị nội dung và hình ảnh</li>
+												<li class="task-item minh">Kiểm tra và đảm bảo chất lượng</li>
+											</ul>
+										</div>
+										
+										<div class="progress-bar">
+											<div class="progress-fill minh" style="width: 100%"></div>
+									</div>
+										<p style="text-align: center; margin-top: 0.5rem; font-weight: bold; color: #3498db;">Tiến độ: 100%</p>
+									</div>
+
+									<!-- Quốc Anh -->
+									<div class="member-card quoc-anh">
+										<div class="member-header">
+											<div class="member-avatar quoc-anh">QA</div>
+											<div class="member-name">Đỗ Quốc Anh</div>
+											<div class="member-role">Content Analyst & Designer</div>
+									</div>
+
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-search"></i> Tìm Hiểu Thông Tin
+											</div>
+											<ul class="task-list">
+												<li class="task-item quoc-anh">Nghiên cứu về Quy luật Phủ định của Phủ định</li>
+												<li class="task-item quoc-anh">Tìm hiểu ví dụ phát triển nhà nước</li>
+												<li class="task-item quoc-anh">Phân tích sự phát triển xoáy ốc</li>
+											</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-microphone"></i> Trình Bày
+											</div>
+											<ul class="task-list">
+												<li class="task-item quoc-anh">Thuyết trình về Quy luật Phủ định của Phủ định</li>
+												<li class="task-item quoc-anh">Giải thích quá trình phát triển xoáy ốc</li>
+												<li class="task-item quoc-anh">Tổng kết và kết luận</li>
+											</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-code"></i> Làm Sản Phẩm
+											</div>
+											<ul class="task-list">
+												<li class="task-item quoc-anh">Tạo trang phan4.html với thiết kế xoáy ốc</li>
+												<li class="task-item quoc-anh">Thiết kế timeline và sơ đồ</li>
+												<li class="task-item quoc-anh">Tối ưu hóa responsive design</li>
+											</ul>
+										</div>
+										
+										<div class="progress-bar">
+											<div class="progress-fill quoc-anh" style="width: 100%"></div>
+											</div>
+										<p style="text-align: center; margin-top: 0.5rem; font-weight: bold; color: #2ecc71;">Tiến độ: 100%</p>
+											</div>
+
+									<!-- Vinh -->
+									<div class="member-card vinh">
+										<div class="member-header">
+											<div class="member-avatar vinh">V</div>
+											<div class="member-name">Phạm Đức Vinh</div>
+											<div class="member-role">Member</div>
+											</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-search"></i> Tìm Hiểu Thông Tin
+											</div>
+											<ul class="task-list">
+												<li class="task-item vinh">Nghiên cứu tổng quan về phép biện chứng</li>
+												<li class="task-item vinh">Tìm hiểu khái niệm và phân loại quy luật</li>
+												<li class="task-item vinh">Tổng hợp tài liệu tham khảo</li>
+											</ul>
+											</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-microphone"></i> Trình Bày
+											</div>
+											<ul class="task-list">
+												<li class="task-item vinh">Thuyết trình phần giới thiệu chung</li>
+												<li class="task-item vinh">Điều phối và quản lý thời gian</li>
+												<li class="task-item vinh">Tổng kết và đánh giá</li>
+												</ul>
+										</div>
+										
+										<div class="task-section">
+											<div class="task-title">
+												<i class="fas fa-code"></i> Làm Sản Phẩm
+											</div>
+											<ul class="task-list">
+												<li class="task-item vinh">Tạo trang phan1.html với nội dung tổng quan</li>
+												<li class="task-item vinh">Quản lý dự án và theo dõi tiến độ</li>
+												<li class="task-item vinh">Đảm bảo chất lượng tổng thể</li>
+											</ul>
+										</div>
+										
+										<div class="progress-bar">
+											<div class="progress-fill vinh" style="width: 100%"></div>
+										</div>
+										<p style="text-align: center; margin-top: 0.5rem; font-weight: bold; color: #f39c12;">Tiến độ: 100%</p>
+										</div>
+									</div>
+
+								<!-- Timeline Section -->
+								<div class="timeline-section">
+									<h3 class="timeline-title">Timeline Dự Án</h3>
+									<div class="timeline">
+										<div class="timeline-item">
+											<div class="timeline-phase">Giai Đoạn 1: Nghiên Cứu</div>
+											<div class="timeline-description">Tất cả thành viên cùng nghiên cứu tài liệu, tìm hiểu thông tin về các quy luật biện chứng duy vật</div>
+										</div>
+										<div class="timeline-item">
+											<div class="timeline-phase">Giai Đoạn 2: Phân Công</div>
+											<div class="timeline-description">Chia công việc đều cho 4 thành viên, mỗi người phụ trách 1 quy luật và tham gia đầy đủ các hoạt động</div>
+										</div>
+										<div class="timeline-item">
+											<div class="timeline-phase">Giai Đoạn 3: Phát Triển</div>
+											<div class="timeline-description">Thực hiện công việc được phân công, tạo sản phẩm web và chuẩn bị trình bày</div>
+										</div>
+										<div class="timeline-item">
+											<div class="timeline-phase">Giai Đoạn 4: Hoàn Thiện</div>
+											<div class="timeline-description">Kiểm tra, đánh giá và hoàn thiện sản phẩm cuối cùng, chuẩn bị thuyết trình</div>
+										</div>
+									</div>
+									</div>
+
+								<!-- Navigation -->
+								<div style="text-align: center; margin: 3rem 0;">
+									<a href="index.html" class="button large" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 25px;">
+										<i class="fas fa-arrow-left"></i> Quay Lại Trang Chủ
+									</a>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Nhóm 2 - Triết Học Mác - Lênin</h3>
+							<p>Dashboard quản lý dự án nghiên cứu về các quy luật cơ bản của phép biện chứng duy vật. Tất cả thành viên đều tham gia đầy đủ các hoạt động tìm hiểu, trình bày và làm sản phẩm.</p>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Thành Viên</h3>
+								<p>Quân - Minh - Quốc Anh - Vinh<br />
+								Phân công đều và công bằng</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Nhóm 2 - Triết Học Mác - Lênin</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

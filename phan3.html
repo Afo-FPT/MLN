@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Phần 3: Quy Luật Mâu thuẫn</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.highlight-box {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 10px;
+				margin: 2rem 0;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			
+			.concept-box {
+				background: #f8f9fa;
+				border-left: 5px solid #dc3545;
+				padding: 1.5rem;
+				margin: 1.5rem 0;
+				border-radius: 0 10px 10px 0;
+			}
+			
+			.definition-box {
+				background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 10px;
+				margin: 2rem 0;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+			
+			.concepts-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+			
+			.concept-card {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 10px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				border-top: 4px solid #dc3545;
+				transition: transform 0.3s ease;
+			}
+			
+			.concept-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.concept-card h4 {
+				color: #dc3545;
+				margin-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.example-box {
+				background: #f8d7da;
+				border: 1px solid #f5c6cb;
+				border-radius: 8px;
+				padding: 1rem;
+				margin: 1rem 0;
+			}
+			
+			.example-box h5 {
+				color: #721c24;
+				margin-bottom: 0.5rem;
+			}
+			
+			.table-container {
+				overflow-x: auto;
+				margin: 2rem 0;
+			}
+			
+			.custom-table {
+				width: 100%;
+				border-collapse: collapse;
+				background: white;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			
+			.custom-table th {
+				background: linear-gradient(135deg, #dc3545 0%, #c0392b 100%);
+				color: white;
+				padding: 1rem;
+				text-align: left;
+				font-weight: bold;
+			}
+			
+			.custom-table td {
+				padding: 1rem;
+				border-bottom: 1px solid #eee;
+			}
+			
+			.custom-table tr:hover {
+				background-color: #f8f9fa;
+			}
+			
+			.contradiction-flow {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				margin: 2rem 0;
+				padding: 2rem;
+				background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+				border-radius: 15px;
+				color: white;
+			}
+			
+			.flow-step {
+				background: rgba(255,255,255,0.2);
+				padding: 1rem;
+				border-radius: 10px;
+				margin: 0.5rem;
+				flex: 1;
+				min-width: 200px;
+				text-align: center;
+				backdrop-filter: blur(10px);
+			}
+			
+			.flow-step h4 {
+				margin-bottom: 0.5rem;
+				font-size: 1.1rem;
+			}
+			
+			.arrow {
+				font-size: 1.5rem;
+				margin: 0 1rem;
+			}
+			
+			.historical-example {
+				background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.historical-example h3 {
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
+			
+			.historical-steps {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+			
+			.historical-step {
+				background: rgba(255,255,255,0.2);
+				padding: 1rem;
+				border-radius: 8px;
+				backdrop-filter: blur(10px);
+			}
+			
+			.historical-step h4 {
+				margin-bottom: 0.5rem;
+				font-size: 1rem;
+			}
+			
+			.practical-meaning {
+				background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 15px;
+				margin: 2rem 0;
+			}
+			
+			.practical-points {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+			
+			.practical-card {
+				background: rgba(255,255,255,0.2);
+				padding: 1.5rem;
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+			}
+			
+			.practical-card h4 {
+				margin-bottom: 1rem;
+				color: #fff;
+			}
+			
+			.back-button {
+				display: inline-block;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 1rem 2rem;
+				text-decoration: none;
+				border-radius: 25px;
+				margin: 2rem 0;
+				transition: transform 0.3s ease;
+			}
+			
+			.back-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			}
+			
+			
+			@media (max-width: 768px) {
+				.contradiction-flow {
+					flex-direction: column;
+				}
+				
+				.arrow {
+					transform: rotate(90deg);
+					margin: 0.5rem 0;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">← Quay lại trang chủ</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Phần 3</span>
+									<h1>Quy Luật Mâu thuẫn</h1>
+									<p>Khám phá quy luật thống nhất và đấu tranh của các mặt đối lập - nguồn gốc và động lực của sự phát triển</p>
+								</header>
+
+								<!-- Định nghĩa -->
+								<div class="definition-box">
+									<h2><i class="fas fa-exclamation-triangle"></i> Định nghĩa</h2>
+									<p>Quy luật thống nhất và đấu tranh của các mặt đối lập, là nguồn gốc, động lực tự thân của sự vận động, phát triển.</p>
+								</div>
+
+								<!-- Khái niệm chính -->
+								<h2><i class="fas fa-lightbulb"></i> Khái niệm chính</h2>
+								
+								<div class="concepts-grid">
+									<div class="concept-card">
+										<h4><i class="fas fa-balance-scale"></i> Mặt đối lập</h4>
+										<p>Các thuộc tính trái ngược nhau, mâu thuẫn nhau trong cùng một sự vật, hiện tượng.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Giai cấp vô sản và tư sản:</strong> Có lợi ích kinh tế trái ngược nhau trong xã hội tư bản.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-handshake"></i> Thống nhất</h4>
+										<p>Nương tựa, đồng nhất một phần, cân bằng tạm thời giữa các mặt đối lập.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Trong xã hội:</strong> Các giai cấp cùng tồn tại trong một xã hội, phụ thuộc lẫn nhau.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-fist-raised"></i> Đấu tranh</h4>
+										<p>Bài trừ, phủ định lẫn nhau, dẫn đến chuyển hóa giữa các mặt đối lập.</p>
+										<div class="example-box">
+											<h5>Ví dụ:</h5>
+											<p><strong>Đấu tranh giai cấp:</strong> Giai cấp vô sản đấu tranh để lật đổ chế độ tư bản.</p>
+										</div>
+									</div>
+
+									<div class="concept-card">
+										<h4><i class="fas fa-sync-alt"></i> Mâu thuẫn biện chứng</h4>
+										<p>Vừa thống nhất vừa đấu tranh, khách quan, phổ biến trong mọi sự vật, hiện tượng.</p>
+										<div class="example-box">
+											<h5>Đặc điểm:</h5>
+											<ul>
+												<li>Tính khách quan</li>
+												<li>Tính phổ biến</li>
+												<li>Vừa thống nhất vừa đấu tranh</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<!-- Quan hệ biện chứng -->
+								<div class="concept-box">
+									<h2><i class="fas fa-sync-alt"></i> Quan hệ biện chứng</h2>
+									<p>Mâu thuẫn biện chứng vừa có tính thống nhất vừa có tính đấu tranh, tạo nên động lực của sự phát triển.</p>
+									
+									<div class="contradiction-flow">
+										<div class="flow-step">
+											<h4>1. Thống nhất</h4>
+											<p>Nương tựa, đồng nhất một phần, cân bằng tạm thời</p>
+										</div>
+										<div class="arrow">↔</div>
+										<div class="flow-step">
+											<h4>2. Đấu tranh</h4>
+											<p>Bài trừ, phủ định lẫn nhau, tạo động lực</p>
+										</div>
+										<div class="arrow">→</div>
+										<div class="flow-step">
+											<h4>3. Chuyển hóa</h4>
+											<p>Tạo ra chất mới, xã hội mới</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Phân loại -->
+								<h2><i class="fas fa-sitemap"></i> Phân loại mâu thuẫn</h2>
+								
+								<div class="table-container">
+									<table class="custom-table">
+										<thead>
+											<tr>
+												<th>Tiêu chí</th>
+												<th>Loại mâu thuẫn</th>
+												<th>Ví dụ</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td rowspan="2"><strong>Vai trò</strong></td>
+												<td>Chủ yếu</td>
+												<td>Giai cấp trong cách mạng</td>
+											</tr>
+											<tr>
+												<td>Thứ yếu</td>
+												<td>Nội bộ nhân dân</td>
+											</tr>
+											<tr>
+												<td rowspan="2"><strong>Quan hệ</strong></td>
+												<td>Bên trong</td>
+												<td>Giai cấp trong xã hội</td>
+											</tr>
+											<tr>
+												<td>Bên ngoài</td>
+												<td>Giữa các quốc gia</td>
+											</tr>
+											<tr>
+												<td rowspan="2"><strong>Tính chất</strong></td>
+												<td>Đối kháng</td>
+												<td>Giai cấp tư sản - vô sản</td>
+											</tr>
+											<tr>
+												<td>Không đối kháng</td>
+												<td>Nội bộ nhân dân</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Ví dụ lịch sử -->
+								<div class="historical-example">
+									<h3><i class="fas fa-landmark"></i> Ví dụ lịch sử: Cách mạng Pháp 1789</h3>
+									
+									<div class="historical-steps">
+										<div class="historical-step">
+											<h4><i class="fas fa-users"></i> Mặt đối lập</h4>
+											<p><strong>Giai cấp thứ ba:</strong> Tư sản, dân chúng (công nhân, nông dân, tiểu tư sản)</p>
+											<p><strong>Phong kiến:</strong> Quý tộc, giáo sĩ (đẳng cấp thứ nhất và thứ hai)</p>
+										</div>
+
+										<div class="historical-step">
+											<h4><i class="fas fa-handshake"></i> Thống nhất</h4>
+											<p>Cùng tồn tại trong xã hội phong kiến Pháp, có những lợi ích chung nhất định trong việc duy trì trật tự xã hội.</p>
+										</div>
+
+										<div class="historical-step">
+											<h4><i class="fas fa-fist-raised"></i> Đấu tranh</h4>
+											<p><strong>Mâu thuẫn về thuế:</strong> Đẳng cấp thứ ba phải chịu thuế nặng</p>
+											<p><strong>Quyền lợi:</strong> Không có quyền chính trị</p>
+											<p><strong>Khủng hoảng kinh tế:</strong> 1780s làm mâu thuẫn chín muồi</p>
+										</div>
+
+										<div class="historical-step">
+											<h4><i class="fas fa-crown"></i> Kết quả</h4>
+											<p><strong>Lật đổ vua Louis XVI</strong> và chế độ quân chủ</p>
+											<p><strong>Thiết lập Cộng hòa</strong> dân chủ</p>
+											<p><strong>Tạo xã hội tư sản dân chủ</strong> mới</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Ý nghĩa thực tiễn -->
+								<div class="practical-meaning">
+									<h2><i class="fas fa-trophy"></i> Ý nghĩa thực tiễn</h2>
+									
+									<div class="practical-points">
+										<div class="practical-card">
+											<h4><i class="fas fa-search"></i> Phân tích mâu thuẫn cụ thể</h4>
+											<p>Cần phân tích mâu thuẫn cụ thể để tìm phương pháp giải quyết phù hợp. Như cách mạng Pháp đã dùng đấu tranh vũ trang, không điều hòa.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-ban"></i> Tránh rập khuôn</h4>
+											<p>Không nên rập khuôn máy móc khi áp dụng vào xã hội hiện đại. Mỗi thời kỳ, mỗi xã hội có những đặc điểm riêng.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-comments"></i> Giải quyết hòa bình</h4>
+											<p>Trong xã hội hiện đại, có thể giải quyết mâu thuẫn lao động - tư bản bằng đối thoại, thương lượng thay vì đấu tranh vũ trang.</p>
+										</div>
+
+										<div class="practical-card">
+											<h4><i class="fas fa-exclamation-triangle"></i> Tránh chủ quan</h4>
+											<p>Không nên chủ quan khi đánh giá và giải quyết mâu thuẫn. Cần phân tích khách quan tình hình cụ thể.</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Navigation -->
+								<div style="text-align: center; margin: 3rem 0;">
+									<a href="index.html" class="back-button">
+										<i class="fas fa-arrow-left"></i> Quay lại trang chủ
+									</a>
+								</div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h3>Triết học Mác - Lênin</h3>
+							<p>Nghiên cứu quy luật Mâu thuẫn để hiểu rõ hơn về nguồn gốc và động lực của sự phát triển trong tự nhiên, xã hội và tư duy.</p>
+						</section>
+						<section class="split contact">
+							<section>
+								<h3>Ứng dụng</h3>
+								<p>Phân tích mâu thuẫn cụ thể<br />
+								Giải quyết bằng phương pháp phù hợp</p>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Triết học Mác - Lênin</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
