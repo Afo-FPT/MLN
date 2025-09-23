@@ -174,6 +174,71 @@
 				margin-bottom: 0.5rem;
 				font-size: 1rem;
 			}
+
+						/* Figures for historical examples */
+						.figure-grid {
+							display: grid;
+							grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+							gap: 1rem;
+							margin-top: 0.75rem;
+						}
+
+						.hist-figure {
+							text-align: center;
+						}
+
+						.hist-figure img {
+							width: 100%;
+							height: auto;
+							border-radius: 8px;
+							box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+						}
+
+						.hist-figure .credit {
+							font-size: 0.85rem;
+							color: rgba(255,255,255,0.95);
+							margin-top: 0.35rem;
+						}
+
+						/* Alternate template: hero + timeline for 1917 example */
+						.example-hero {
+							display: grid;
+							grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+							gap: 1.25rem;
+							align-items: center;
+							margin-top: 0.75rem;
+						}
+
+						.example-hero .hero-media img {
+							width: 100%;
+							height: auto;
+							border-radius: 10px;
+							box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+						}
+
+						.badge {
+							display: inline-block;
+							background: rgba(255,255,255,0.2);
+							color: #fff;
+							padding: 0.25rem 0.6rem;
+							border-radius: 999px;
+							font-size: 0.85rem;
+							margin-right: 0.4rem;
+						}
+
+						.timeline-list {
+							list-style: none;
+							padding: 0;
+							margin: 0.75rem 0 0;
+						}
+
+						.timeline-list li {
+							background: rgba(255,255,255,0.15);
+							border-left: 4px solid #c0392b;
+							padding: 0.6rem 0.8rem;
+							border-radius: 6px;
+							margin: 0.4rem 0;
+						}
 			
 			.practical-meaning {
 				background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
@@ -255,25 +320,33 @@
 								<!-- Định nghĩa -->
 								<div class="definition-box">
 									<h2><i class="fas fa-exclamation-triangle"></i> Định nghĩa</h2>
-									<p>Quy luật thống nhất và đấu tranh của các mặt đối lập, là nguồn gốc, động lực tự thân của sự vận động, phát triển.</p>
+							<p>Quy luật thống nhất và đấu tranh của các mặt đối lập, là nguồn gốc, động lực tự thân của sự vận động, phát triển.</p>
 								</div>
 
 								<!-- Khái niệm chính -->
 								<h2><i class="fas fa-lightbulb"></i> Khái niệm chính</h2>
 								
-								<div class="concepts-grid">
+						<div class="concepts-grid">
 									<div class="concept-card">
 										<h4><i class="fas fa-balance-scale"></i> Mặt đối lập</h4>
-										<p>Các thuộc tính trái ngược nhau, mâu thuẫn nhau trong cùng một sự vật, hiện tượng.</p>
+								<p>Những mặt, thuộc tính, tính quy định có khuynh hướng biến đổi trái ngược nhau; tồn tại khách quan, phổ biến trong tự nhiên, xã hội và tư duy.</p>
 										<div class="example-box">
 											<h5>Ví dụ:</h5>
-											<p><strong>Giai cấp vô sản và tư sản:</strong> Có lợi ích kinh tế trái ngược nhau trong xã hội tư bản.</p>
+									<p><strong>Giai cấp vô sản và tư sản:</strong> Lợi ích kinh tế đối lập trong xã hội tư bản.</p>
 										</div>
 									</div>
 
 									<div class="concept-card">
 										<h4><i class="fas fa-handshake"></i> Thống nhất</h4>
-										<p>Nương tựa, đồng nhất một phần, cân bằng tạm thời giữa các mặt đối lập.</p>
+								<p>Sự thống nhất của các mặt đối lập bao gồm:</p>
+								<div class="example-box">
+									<h5>Thành tố:</h5>
+									<ul>
+										<li>Nương tựa, đòi hỏi lẫn nhau (mặt này lấy mặt kia làm tiền đề)</li>
+										<li>Giống nhau (đồng nhất) ở một số nhân tố, làm cầu nối chuyển hóa</li>
+										<li>Tác động ngang nhau ở trạng thái cân bằng tạm thời</li>
+									</ul>
+								</div>
 										<div class="example-box">
 											<h5>Ví dụ:</h5>
 											<p><strong>Trong xã hội:</strong> Các giai cấp cùng tồn tại trong một xã hội, phụ thuộc lẫn nhau.</p>
@@ -282,22 +355,22 @@
 
 									<div class="concept-card">
 										<h4><i class="fas fa-fist-raised"></i> Đấu tranh</h4>
-										<p>Bài trừ, phủ định lẫn nhau, dẫn đến chuyển hóa giữa các mặt đối lập.</p>
+								<p>Tác động qua lại theo xu hướng bài trừ, phủ định lẫn nhau, dẫn đến chuyển hóa (mặt này sang mặt kia hoặc cả hai sang chất mới).</p>
 										<div class="example-box">
 											<h5>Ví dụ:</h5>
-											<p><strong>Đấu tranh giai cấp:</strong> Giai cấp vô sản đấu tranh để lật đổ chế độ tư bản.</p>
+									<p><strong>Đấu tranh giai cấp:</strong> Vô sản chống tư bản để thay đổi quan hệ sản xuất.</p>
 										</div>
 									</div>
 
 									<div class="concept-card">
 										<h4><i class="fas fa-sync-alt"></i> Mâu thuẫn biện chứng</h4>
-										<p>Vừa thống nhất vừa đấu tranh, khách quan, phổ biến trong mọi sự vật, hiện tượng.</p>
+								<p>Khi các mặt đối lập vừa thống nhất vừa đấu tranh, tạo nên mâu thuẫn. Có tính khách quan, phổ biến, đa dạng; khác với mâu thuẫn logic hình thức hay ngôn ngữ đời thường.</p>
 										<div class="example-box">
 											<h5>Đặc điểm:</h5>
 											<ul>
 												<li>Tính khách quan</li>
 												<li>Tính phổ biến</li>
-												<li>Vừa thống nhất vừa đấu tranh</li>
+										<li>Vừa thống nhất vừa đấu tranh, có khả năng chuyển hóa</li>
 											</ul>
 										</div>
 									</div>
@@ -327,7 +400,7 @@
 								</div>
 
 								<!-- Phân loại -->
-								<h2><i class="fas fa-sitemap"></i> Phân loại mâu thuẫn</h2>
+					<h2><i class="fas fa-sitemap"></i> Phân loại mâu thuẫn</h2>
 								
 								<div class="table-container">
 									<table class="custom-table">
@@ -370,64 +443,119 @@
 									</table>
 								</div>
 
-								<!-- Ví dụ lịch sử -->
-								<div class="historical-example">
-									<h3><i class="fas fa-landmark"></i> Ví dụ lịch sử: Cách mạng Pháp 1789</h3>
-									
-									<div class="historical-steps">
-										<div class="historical-step">
-											<h4><i class="fas fa-users"></i> Mặt đối lập</h4>
-											<p><strong>Giai cấp thứ ba:</strong> Tư sản, dân chúng (công nhân, nông dân, tiểu tư sản)</p>
-											<p><strong>Phong kiến:</strong> Quý tộc, giáo sĩ (đẳng cấp thứ nhất và thứ hai)</p>
-										</div>
-
-										<div class="historical-step">
-											<h4><i class="fas fa-handshake"></i> Thống nhất</h4>
-											<p>Cùng tồn tại trong xã hội phong kiến Pháp, có những lợi ích chung nhất định trong việc duy trì trật tự xã hội.</p>
-										</div>
-
-										<div class="historical-step">
-											<h4><i class="fas fa-fist-raised"></i> Đấu tranh</h4>
-											<p><strong>Mâu thuẫn về thuế:</strong> Đẳng cấp thứ ba phải chịu thuế nặng</p>
-											<p><strong>Quyền lợi:</strong> Không có quyền chính trị</p>
-											<p><strong>Khủng hoảng kinh tế:</strong> 1780s làm mâu thuẫn chín muồi</p>
-										</div>
-
-										<div class="historical-step">
-											<h4><i class="fas fa-crown"></i> Kết quả</h4>
-											<p><strong>Lật đổ vua Louis XVI</strong> và chế độ quân chủ</p>
-											<p><strong>Thiết lập Cộng hòa</strong> dân chủ</p>
-											<p><strong>Tạo xã hội tư sản dân chủ</strong> mới</p>
-										</div>
+					<!-- Ví dụ lịch sử: Cách mạng Tháng Mười Nga 1917 -->
+					<div class="historical-example">
+						<h3><i class="fas fa-landmark"></i> Ví dụ lịch sử: Cách mạng Tháng Mười Nga (1917)</h3>
+						<div class="example-hero">
+							<div class="hero-media">
+								<img src="images/Đấu tranh giai cấp trong Cách mạng Tháng Mười Nga năm 1917/ff6d1671-a44a-42be-9a4e-e1b1ec6e5670.jpg" alt="Nga 1917 - phong trào và đấu tranh" />
+							</div>
+							<div class="hero-content">
+								<p><span class="badge">Đối kháng</span><span class="badge">Bên trong</span><span class="badge">Chủ yếu</span></p>
+								<p><strong>Mặt đối lập:</strong> Vô sản (công nhân, nông dân nghèo) ↔ Tư sản/địa chủ (nắm tư liệu và quyền lực).</p>
+								<p><em>Thống nhất:</em> Cùng tồn tại, phụ thuộc lẫn nhau trong sản xuất.</p>
+								<ul class="timeline-list">
+									<li>1914–1917: Chiến tranh thế giới I làm mâu thuẫn chín muồi</li>
+									<li>02/1917: Lật đổ Sa hoàng (Cách mạng Tháng Hai)</li>
+									<li>10/1917: Chính quyền Xô viết giành chính quyền</li>
+								</ul>
+								<div class="figure-grid" style="margin-top: 1rem;">
+									<div class="hist-figure">
+										<img src="images/Đấu tranh giai cấp trong Cách mạng Tháng Mười Nga năm 1917/03e6f0e2-0c0e-4b90-8b46-a1dd9cb61958.jpg" alt="Đấu tranh giai cấp - Nga 1917 (hình 1)" />
+										<div class="credit">Nga 1917 — phong trào quần chúng và đấu tranh vũ trang.</div>
+									</div>
+									<div class="hist-figure">
+										<img src="images/Đấu tranh giai cấp trong Cách mạng Tháng Mười Nga năm 1917/1bb5f88c-9d0c-4caa-a578-e89aae72163c.jpg" alt="Đấu tranh giai cấp - Nga 1917 (hình 2)" />
+										<div class="credit">Nga 1917 — biểu tình và bãi công của công nhân.</div>
+									</div>
+									<div class="hist-figure">
+										<img src="images/Đấu tranh giai cấp trong Cách mạng Tháng Mười Nga năm 1917/ff6d1671-a44a-42be-9a4e-e1b1ec6e5670.jpg" alt="Đấu tranh giai cấp - Nga 1917 (hình 3)" />
+										<div class="credit">Nga 1917 — lực lượng cách mạng giành chính quyền.</div>
 									</div>
 								</div>
+							</div>
+						</div>
+						<div class="historical-steps">
+							<div class="historical-step">
+								<h4><i class="fas fa-search"></i> Phân tích</h4>
+								<p><strong>Ý nghĩa quy luật:</strong> Mâu thuẫn nội tại (giai cấp) là động lực chính.</p>
+								<p><strong>Phân loại:</strong> Chủ yếu, đối kháng, bên trong xã hội.</p>
+								<p><strong>Phương pháp luận:</strong> Phân tích cụ thể, giải quyết bằng đấu tranh cách mạng; tránh điều hòa hình thức.</p>
+							</div>
+						</div>
+					</div>
 
-								<!-- Ý nghĩa thực tiễn -->
-								<div class="practical-meaning">
-									<h2><i class="fas fa-trophy"></i> Ý nghĩa thực tiễn</h2>
-									
-									<div class="practical-points">
-										<div class="practical-card">
-											<h4><i class="fas fa-search"></i> Phân tích mâu thuẫn cụ thể</h4>
-											<p>Cần phân tích mâu thuẫn cụ thể để tìm phương pháp giải quyết phù hợp. Như cách mạng Pháp đã dùng đấu tranh vũ trang, không điều hòa.</p>
-										</div>
-
-										<div class="practical-card">
-											<h4><i class="fas fa-ban"></i> Tránh rập khuôn</h4>
-											<p>Không nên rập khuôn máy móc khi áp dụng vào xã hội hiện đại. Mỗi thời kỳ, mỗi xã hội có những đặc điểm riêng.</p>
-										</div>
-
-										<div class="practical-card">
-											<h4><i class="fas fa-comments"></i> Giải quyết hòa bình</h4>
-											<p>Trong xã hội hiện đại, có thể giải quyết mâu thuẫn lao động - tư bản bằng đối thoại, thương lượng thay vì đấu tranh vũ trang.</p>
-										</div>
-
-										<div class="practical-card">
-											<h4><i class="fas fa-exclamation-triangle"></i> Tránh chủ quan</h4>
-											<p>Không nên chủ quan khi đánh giá và giải quyết mâu thuẫn. Cần phân tích khách quan tình hình cụ thể.</p>
-										</div>
+					<!-- Ví dụ lịch sử: Cách mạng Pháp 1789 -->
+					<div class="historical-example">
+						<h3><i class="fas fa-landmark"></i> Ví dụ lịch sử: Cách mạng Pháp (1789)</h3>
+						<div class="example-hero">
+							<div class="hero-media">
+								<img src="images/Cách mạng Pháp năm 1789/18d23493-7eb3-4027-8232-31cbb793fd6f.jpg" alt="Pháp 1789 - phong trào cách mạng" />
+							</div>
+							<div class="hero-content">
+								<p><span class="badge">Chuyển hóa</span><span class="badge">Bên trong</span><span class="badge">Chủ yếu</span></p>
+								<p><strong>Mặt đối lập:</strong> Giai cấp thứ ba (dân chúng, tư sản mới nổi) ↔ Chế độ phong kiến (quý tộc, giáo sĩ).</p>
+								<p><em>Thống nhất:</em> Cùng tồn tại trong nền kinh tế nông nghiệp; tư sản phụ thuộc đất đai quý tộc.</p>
+								<ul class="timeline-list">
+									<li>05–06/1789: Hội nghị Ba Tầng lớp, Tuyên bố Quốc hội</li>
+									<li>14/07/1789: Chiếm ngục Bastille – bùng nổ cách mạng</li>
+									<li>1791–1792: Hiến pháp 1791, thiết lập Cộng hòa 1792</li>
+								</ul>
+								<div class="figure-grid" style="margin-top: 1rem;">
+									<div class="hist-figure">
+										<img src="images/Cách mạng Pháp năm 1789/18d23493-7eb3-4027-8232-31cbb793fd6f.jpg" alt="Cách mạng Pháp 1789 - hình 1" />
+										<div class="credit">Pháp 1789 — quần chúng Paris nổi dậy.</div>
+									</div>
+									<div class="hist-figure">
+										<img src="images/Cách mạng Pháp năm 1789/88e5df1c-2897-439a-bf86-ca15500599b2.jpg" alt="Cách mạng Pháp 1789 - hình 2" />
+										<div class="credit">Pháp 1789 — Quốc ước lập hiến, thay đổi thể chế.</div>
+									</div>
+									<div class="hist-figure">
+										<img src="images/Cách mạng Pháp năm 1789/e60ba7a8-684d-4277-a1f6-5c7887705907.jpg" alt="Cách mạng Pháp 1789 - hình 3" />
+										<div class="credit">Pháp 1789 — chuyển biến sang thiết chế dân chủ.</div>
 									</div>
 								</div>
+							</div>
+						</div>
+						<div class="historical-steps">
+							<div class="historical-step">
+								<h4><i class="fas fa-users"></i> Mặt đối lập</h4>
+								<p><strong>Giai cấp thứ ba</strong> (dân chúng, tư sản mới nổi) ↔ <strong>Chế độ phong kiến</strong> (quý tộc, giáo sĩ).</p>
+								<p><em>Thống nhất:</em> Cùng tồn tại trong nền kinh tế nông nghiệp; tư sản phụ thuộc đất đai quý tộc.</p>
+							</div>
+							<div class="historical-step">
+								<h4><i class="fas fa-exchange-alt"></i> Chuyển từ không đối kháng → đối kháng</h4>
+								<p>Ban đầu mâu thuẫn về thuế, tự do thương mại; khủng hoảng 1780s làm mâu thuẫn chuyển thành đối kháng.</p>
+								<p>Hội nghị Ba Tầng lớp (1789) mở đường cho lật đổ quân chủ, thiết lập Cộng hòa.</p>
+								<!-- gallery moved to hero above -->
+							</div>
+							<div class="historical-step">
+								<h4><i class="fas fa-search"></i> Phân tích</h4>
+								<p><strong>Ý nghĩa quy luật:</strong> Mâu thuẫn nội tại (giai cấp, lực lượng sản xuất) là động lực; thống nhất tạm thời bị phá vỡ bởi đấu tranh tuyệt đối.</p>
+								<p><strong>Phân loại:</strong> Chủ yếu, bên trong; chuyển từ không đối kháng sang đối kháng.</p>
+								<p><strong>Phương pháp luận:</strong> Tôn trọng tính khách quan; phân tích cụ thể (như cách Robespierre xử lý các tầng lớp); giải quyết bằng đấu tranh, tránh điều hòa máy móc.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Ý nghĩa phương pháp luận -->
+					<div class="practical-meaning">
+						<h2><i class="fas fa-trophy"></i> Ý nghĩa phương pháp luận</h2>
+						<div class="practical-points">
+							<div class="practical-card">
+								<h4><i class="fas fa-check-circle"></i> Tôn trọng mâu thuẫn khách quan</h4>
+								<p>Thừa nhận mâu thuẫn là phổ biến và khách quan trong mọi lĩnh vực.</p>
+							</div>
+							<div class="practical-card">
+								<h4><i class="fas fa-search"></i> Phân tích cụ thể từng loại</h4>
+								<p>Xác định vai trò, vị trí, quan hệ, khả năng chuyển hóa để giải quyết phù hợp; tránh rập khuôn.</p>
+							</div>
+							<div class="practical-card">
+								<h4><i class="fas fa-fist-raised"></i> Giải quyết bằng đấu tranh</h4>
+								<p>Không điều hòa mâu thuẫn đối kháng; tránh nóng vội hoặc bảo thủ khi xử lý.</p>
+							</div>
+						</div>
+					</div>
 
 								<!-- Navigation -->
 								<div style="text-align: center; margin: 3rem 0;">

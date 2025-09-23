@@ -249,6 +249,67 @@
 				margin-bottom: 0.5rem;
 				color: #fff;
 			}
+
+						/* Step figures for historical examples */
+						.step-figure {
+							margin-top: 0.75rem;
+							text-align: center;
+						}
+
+						.step-figure img {
+							width: 100%;
+							max-width: 460px;
+							height: auto;
+							border-radius: 8px;
+							box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+						}
+
+						.step-figure .credit {
+							font-size: 0.85rem;
+							color: rgba(255,255,255,0.95);
+							margin-top: 0.4rem;
+						}
+
+						.figure-duo {
+							display: grid;
+							grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+							gap: 1rem;
+							margin-top: 0.75rem;
+						}
+						/* Founders portraits */
+						.founders-portraits {
+							display: grid;
+							grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+							gap: 1.5rem;
+							margin-top: 1.5rem;
+						}
+
+						.portrait-card {
+							background: rgba(255,255,255,0.15);
+							padding: 1rem;
+							border-radius: 10px;
+							text-align: center;
+							backdrop-filter: blur(8px);
+						}
+
+						.portrait-card img {
+							width: 100%;
+							max-width: 260px;
+							height: auto;
+							border-radius: 8px;
+							box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+							margin-bottom: 0.75rem;
+						}
+
+						.portrait-card h4 {
+							margin: 0.25rem 0 0.5rem;
+							color: #fff;
+						}
+
+						.portrait-card p {
+							color: rgba(255,255,255,0.9);
+							font-size: 0.95rem;
+						}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -275,7 +336,20 @@
 								<!-- Định nghĩa -->
 								<div class="definition-box">
 									<h2><i class="fas fa-sync-alt"></i> Định nghĩa</h2>
-									<p>Quy luật chỉ ra sự phát triển theo đường xoáy ốc, qua các lần phủ định biện chứng, tạo cái mới tiến bộ hơn, với tính kế thừa.</p>
+						<p>Quy luật chỉ ra sự phát triển theo đường xoáy ốc, qua các lần phủ định biện chứng, tạo cái mới tiến bộ hơn, với tính kế thừa. “Quy luật phủ định của phủ định” (Law of the Negation of the Negation) là một trong những quy luật cơ bản của chủ nghĩa duy vật biện chứng, được Marx & Engels tiếp nhận từ Hegel.</p>
+						<p>Theo quy luật này, quá trình phát triển (tự nhiên, xã hội, tư tưởng) không phải là tuyến tính mà diễn ra qua ba giai đoạn: khẳng định → phủ định → phủ định của phủ định. Sau hai lần phủ định, cái mới ra đời không quay về nguyên trạng, mà ở trình độ cao hơn, tổng hợp hơn, kế thừa những giá trị chân thực của các giai đoạn trước.</p>
+						<div class="founders-portraits">
+							<div class="portrait-card">
+								<img src="images/Marx&Engels.jpg" alt="Karl Marx & Friedrich Engels" />
+								<h4>Karl Marx & Friedrich Engels</h4>
+								<p>Hệ thống hóa quy luật trong chủ nghĩa duy vật biện chứng.</p>
+							</div>
+							<div class="portrait-card">
+								<img src="images/Hegel.webp" alt="G. W. F. Hegel" onerror="this.onerror=null;this.src='images/pic02.jpg';" />
+								<h4>G. W. F. Hegel</h4>
+								<p>Nguồn gốc phép biện chứng được tiếp thu và phát triển.</p>
+							</div>
+						</div>
 								</div>
 
 								<!-- Khái niệm chính -->
@@ -325,27 +399,39 @@
 									<h2><i class="fas fa-sync-alt"></i> Quy trình phát triển xoáy ốc</h2>
 									
 									<div class="spiral-flow">
-										<div class="spiral-step">
-											<h4><i class="fas fa-plus-circle"></i> Thesis (Khẳng định)</h4>
-											<p>Trạng thái ban đầu, cái cũ tồn tại</p>
-											<div class="year">Giai đoạn 1</div>
-										</div>
+						<div class="spiral-step">
+							<h4><i class="fas fa-plus-circle"></i> Thesis (Khẳng định)</h4>
+							<p>Một hình thái, trạng thái hay tư tưởng xuất hiện, giữ vị trí chủ đạo.</p>
+							<p><strong>Ví dụ:</strong> Dân chủ trực tiếp Athens.</p>
+							<div class="year">Giai đoạn 1</div>
+						</div>
 										
 										<div class="arrow-down">↓</div>
 										
-										<div class="spiral-step">
-											<h4><i class="fas fa-minus-circle"></i> Antithesis (Phủ định)</h4>
-											<p>Cái cũ bị phủ định, xuất hiện cái mới</p>
-											<div class="year">Giai đoạn 2</div>
-										</div>
+						<div class="spiral-step">
+							<h4><i class="fas fa-minus-circle"></i> Antithesis (Phủ định)</h4>
+							<p>Mâu thuẫn nội tại làm cái cũ bị vượt qua. Cái mới phủ định cái cũ, nhưng vẫn giữ lại một số yếu tố hợp lý.</p>
+							<p><strong>Ví dụ:</strong> Đế chế La Mã chuyên chế thay thế mô hình thành bang.</p>
+							<div class="year">Giai đoạn 2</div>
+						</div>
 										
 										<div class="arrow-down">↓</div>
 										
-										<div class="spiral-step">
-											<h4><i class="fas fa-sync"></i> Synthesis (Phủ định của phủ định)</h4>
-											<p>Cái mới tiến bộ hơn, kế thừa yếu tố tích cực</p>
-											<div class="year">Giai đoạn 3</div>
-										</div>
+						<div class="spiral-step">
+							<h4><i class="fas fa-sync"></i> Synthesis (Phủ định của phủ định)</h4>
+							<p>Giai đoạn mới ra đời từ việc phủ định cái phủ định, kế thừa mặt tích cực của cả hai giai đoạn trước. Phát triển cao hơn, không quay về điểm ban đầu mà được bổ sung và nâng tầm.</p>
+							<p><strong>Ví dụ:</strong> Dân chủ đại diện hiện đại kế thừa dân chủ Athens (nguyên tắc nhân dân làm chủ) và La Mã (luật pháp, tổ chức nhà nước).</p>
+							<div class="year">Giai đoạn 3</div>
+						</div>
+
+						<div class="arrow-down">↓</div>
+
+						<div class="spiral-step">
+							<h4><i class="fas fa-infinity"></i> Tiếp tục chu kỳ mới</h4>
+							<p>Trạng thái mới tiếp tục bộc lộ mâu thuẫn → xuất hiện phủ định mới → hình thành cái mới cao hơn.</p>
+							<p>Kết quả là đường xoáy ốc phát triển, mỗi vòng xoắn là một chu kỳ phủ định của phủ định.</p>
+							<div class="year">Giai đoạn kế tiếp</div>
+						</div>
 									</div>
 								</div>
 
@@ -359,6 +445,10 @@
 											<div class="timeline">Thế kỷ 5 TCN</div>
 											<p><strong>Thành bang dân chủ Athens</strong></p>
 											<p>Công dân tham gia trực tiếp vào việc quản lý nhà nước. Hội đồng 500 người, Đại hội công dân quyết định các vấn đề quan trọng.</p>
+								<div class="step-figure">
+									<img src="images/ảnh 1.jpg" alt="Parthenon / Agora - Athens democracy" onerror="this.onerror=null;this.src='images/pic01.jpg';" />
+									
+								</div>
 										</div>
 
 										<div class="historical-step negation">
@@ -366,6 +456,10 @@
 											<div class="timeline">509 TCN - 476 SCN</div>
 											<p><strong>Đế chế La Mã chuyên chế</strong></p>
 											<p>Quyền lực tập trung vào hoàng đế, chấm dứt nền dân chủ trực tiếp. Chế độ quân chủ tuyệt đối với quyền lực vô hạn.</p>
+								<div class="step-figure">
+									<img src="images/ảnh 2.jpeg" alt="Augustus of Prima Porta - Imperial Rome" onerror="this.onerror=null;this.src='images/pic03.jpg';" />
+									
+								</div>
 										</div>
 
 										<div class="historical-step negation-of-negation">
@@ -373,6 +467,16 @@
 											<div class="timeline">1215 - Hiện tại</div>
 											<p><strong>Dân chủ đại diện hiện đại</strong></p>
 											<p>Phong kiến châu Âu kế thừa luật pháp La Mã (Magna Carta 1215), dẫn đến dân chủ đại diện hiện đại qua Cách mạng Pháp 1789, Mỹ 1776. Có quyền bầu cử rộng rãi, hiến pháp, phân quyền.</p>
+								<div class="figure-duo">
+									<div class="step-figure">
+										<img src="images/ảnh 3.jpg" alt="Magna Carta - Rule of law" onerror="this.onerror=null;this.src='images/pic05.jpg';" />
+										
+									</div>
+									<div class="step-figure">
+										<img src="images/ảnh 4.jpg" alt="Signing the Declaration of Independence - Trumbull" onerror="this.onerror=null;this.src='images/pic07.jpg';" />
+										
+									</div>
+								</div>
 										</div>
 									</div>
 								</div>
